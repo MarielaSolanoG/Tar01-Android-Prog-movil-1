@@ -116,7 +116,7 @@
         android:textAppearance="@android:style/TextAppearance.Material.Large"
         tools:ignore="DuplicateIds" />
     <EditText
-        android:id="@+id/editTextProductQuantitySale"
+        android:id="@+id/editTextProductQuantitySold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese la cantidad de producto vendido"
