@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Id del producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <EditText
+        android:id="@+id/editTextProductId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el id del producto"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Nombre del producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        tools:ignore="DuplicateIds" />
+    <EditText
+        android:id="@+id/editTextProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el nombre del producto"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Precio costo del producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        tools:ignore="DuplicateIds" />
+    <EditText
+        android:id="@+id/editTextProductPriceCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el precio costo del producto"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Precio venta del producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        tools:ignore="DuplicateIds" />
+    <EditText
+        android:id="@+id/editTextProductPriceSale"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese el precio venta del producto"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Cantidad de producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        tools:ignore="DuplicateIds" />
+    <EditText
+        android:id="@+id/editTextProductQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese la cantidad de producto"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="Cantidad de producto vendido"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        tools:ignore="DuplicateIds" />
+    <EditText
+        android:id="@+id/editTextProductQuantitySold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese la cantidad de producto vendido"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
+    <Button
+        android:id="@+id/buttonAddProduct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar Producto"
+        android:layout_marginTop="16dp"
+        android:onClick="onAddProductButtonClick" />
+
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:layout_marginTop="16dp"
+        android:onClick="onExitButtonClick" />
+</LinearLayout>

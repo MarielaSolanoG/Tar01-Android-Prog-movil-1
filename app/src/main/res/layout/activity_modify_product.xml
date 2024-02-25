@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- Campo de búsqueda por ID del producto -->
+    <TextView
+        android:id="@+id/textViewProductId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar por ID del producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <EditText
+        android:id="@+id/editTextProductId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del producto"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true" />
+    <Button
+        android:id="@+id/buttonSearchId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:layout_marginTop="16dp" />
+    <!-- Campo de búsqueda por nombre del producto -->
+    <TextView
+        android:id="@+id/textViewProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar por nombre del producto"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextProductName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre del producto"
+        android:inputType="text"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <!-- Botón para buscar el producto -->
+    <Button
+        android:id="@+id/buttonSearchName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:layout_marginTop="16dp" />
+
+    <!-- Separador visual -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="16dp" />
+
+
+        <!-- Campo para mostrar y modificar el precio de costo -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="92dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/textViewCostPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuevo precio de costo"
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+    <EditText
+        android:id="@+id/editTextCostPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese nuevo precio de costo"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <!-- Campo para mostrar y modificar el precio de venta -->
+    <TextView
+        android:id="@+id/textViewSalePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuevo precio de venta"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextSalePrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese nuevo precio de venta"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <!-- Campo para mostrar y modificar la cantidad -->
+    <TextView
+        android:id="@+id/textViewQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nueva cantidad"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese nueva cantidad"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <!-- Botón para guardar los cambios -->
+    <Button
+        android:id="@+id/buttonSaveChanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar cambios"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/buttonExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:layout_marginTop="16dp"
+        android:onClick="onExitButtonClick" />
+
+</LinearLayout>
