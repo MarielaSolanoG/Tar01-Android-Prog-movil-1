@@ -68,7 +68,7 @@ public class Product {
     }
 
     public String toString() {
-        return "Name: " + name + ", Price Cost: $" + priceCost+ ", Price Sale: $" + priceSale+ ", Cantidad: $" + quantity+
+        return "Id: " + productId + "Nombre: " + name + ", Precio costo: $" + priceCost+ ", Precio venta: $" + priceSale+ ", Cantidad: $" + quantity+
                 "Cantidad Vendido: " + quantitySold;
     }
 }

@@ -22,6 +22,7 @@ public class ConsultProductActivity extends Activity {
 
     private ArrayList<Product> allProducts;
 
+    private List<Product> filteredProducts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +34,7 @@ public class ConsultProductActivity extends Activity {
         productManager = MyApplication.getProductManager();
 
         allProducts = new ArrayList<>(productManager.getProductList());
+        filteredProducts = new ArrayList<>();
 
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             RadioButton radioButton = findViewById(checkedId);
@@ -53,7 +55,6 @@ public class ConsultProductActivity extends Activity {
     public void searchProductButtonClick(View view) {
         String selectedOption = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
         String quantityText = editTextSearch.getText().toString();
-        List<Product> filteredProducts;
 
         if (selectedOption.equals("Todos los productos")) {
             // Mostrar todos los productos sin filtrar
@@ -67,7 +68,7 @@ public class ConsultProductActivity extends Activity {
         }
 
         int quantity = Integer.parseInt(quantityText);
-        filteredProducts = filterProducts(selectedOption, quantity);
+        filterProducts(selectedOption, quantity);
 
         if (filteredProducts.isEmpty()) {
             Toast.makeText(this, "No se encontraron productos", Toast.LENGTH_SHORT).show();
@@ -77,11 +78,10 @@ public class ConsultProductActivity extends Activity {
         }
     }
 
-    private List<Product> filterProducts(String selectedOption, int quantity) {
-        List<Product> productList = productManager.getProductList();
-        List<Product> filteredProducts = new ArrayList<>();
+    public void filterProducts(String selectedOption, int quantity) {
 
-        for (Product product : productList) {
+
+        for (Product product : allProducts) {
             switch (selectedOption) {
                 case "Precio Costo":
                     if (product.getPriceCost() == quantity) {
@@ -105,8 +105,6 @@ public class ConsultProductActivity extends Activity {
                     break;
             }
         }
-
-        return filteredProducts;
     }
 
     private void clearListView() {
@@ -114,11 +112,11 @@ public class ConsultProductActivity extends Activity {
         if (adapter != null) {
             adapter.clear();
         }
-        allProducts.clear(); // Limpiar la lista de todos los productos
+        filteredProducts.clear(); // Limpiar la lista de productos filtrados
     }
 
     private void displayAllProducts() {
-        updateListView(allProducts);
+        updateListView(new ArrayList<>(productManager.getProductList()));
     }
 
     private void updateListView(List<Product> products) {
