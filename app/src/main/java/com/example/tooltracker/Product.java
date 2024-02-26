@@ -66,4 +66,9 @@ public class Product {
     public void setQuantitySold(int quantitySold) {
         this.quantitySold = quantitySold;
     }
+
+    public String toString() {
+        return "Name: " + name + ", Price Cost: $" + priceCost+ ", Price Sale: $" + priceSale+ ", Cantidad: $" + quantity+
+                "Cantidad Vendido: " + quantitySold;
+    }
 }

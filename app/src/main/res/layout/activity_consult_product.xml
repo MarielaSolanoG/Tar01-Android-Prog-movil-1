@@ -4,100 +4,68 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- Consulta por precio -->
-    <LinearLayout
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/editTextMinPrice"
-            android:layout_width="0dp"
+        <RadioButton
+            android:id="@+id/radioButtonPrecioCosto"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Precio mínimo"
-            android:inputType="numberDecimal"
-            android:layout_marginEnd="8dp" />
+            android:text="Precio Costo" />
 
-        <EditText
-            android:id="@+id/editTextMaxPrice"
-            android:layout_width="0dp"
+        <RadioButton
+            android:id="@+id/radioButtonPrecioVenta"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Precio máximo"
-            android:inputType="numberDecimal"
-            android:layout_marginStart="8dp" />
+            android:text="Precio Venta" />
 
-    </LinearLayout>
+        <RadioButton
+            android:id="@+id/radioButtonCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad" />
 
-    <!-- Consulta por cantidad disponible -->
-    <LinearLayout
+        <RadioButton
+            android:id="@+id/radioButtonCantidadVendidos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad vendidos" />
+        <RadioButton
+            android:id="@+id/radioButtonAllProducts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Todos los productos" />
+    </RadioGroup>
+    <EditText
+        android:id="@+id/editTextSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
-
-        <EditText
-            android:id="@+id/editTextMinQuantity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Cantidad mínima disponible"
-            android:inputType="number"
-            android:layout_marginEnd="8dp" />
-
-        <EditText
-            android:id="@+id/editTextMaxQuantity"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Cantidad máxima disponible"
-            android:inputType="number"
-            android:layout_marginStart="8dp" />
-
-    </LinearLayout>
-
-    <!-- Consulta por cantidad vendida -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
-
-        <EditText
-            android:id="@+id/editTextMinSold"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Cantidad mínima vendida"
-            android:inputType="number"
-            android:layout_marginEnd="8dp" />
-
-        <!-- Agregar un margen start al último elemento para evitar que se pegue al borde derecho -->
-        <EditText
-            android:id="@+id/editTextMaxSold"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Cantidad máxima vendida"
-            android:inputType="number"
-            android:layout_marginStart="8dp" />
-
-    </LinearLayout>
-
+        android:hint="Ingrese un numero"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        />
     <!-- Botón de búsqueda -->
     <Button
         android:id="@+id/buttonSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Buscar"
+        android:onClick="searchProductButtonClick"
         android:layout_marginTop="16dp" />
 
-
-    <GridView
+    <ListView
+        android:id="@+id/listViewResults"
         android:layout_width="match_parent"
-        android:layout_height="495dp" />
-
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
     <Button
         android:id="@+id/buttonExit"
         android:layout_width="match_parent"

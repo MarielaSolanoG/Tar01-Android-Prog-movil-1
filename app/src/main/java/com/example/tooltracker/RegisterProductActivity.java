@@ -3,6 +3,8 @@ package com.example.tooltracker;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.EditText;
 import java.util.List;
@@ -41,7 +43,7 @@ public class RegisterProductActivity extends Activity {
         // Crear un nuevo producto
         Product newProduct = new Product(productId, name, quantity, priceCost, priceSale, quantitySold);
         System.out.println(newProduct);
-        ProductManager productManager = MainActivity.productManager;
+        ProductManager productManager = MyApplication.getProductManager();
         productManager.addProduct(newProduct);
         List<Product> productList = productManager.getProductList();
         for (Product product : productList) {
