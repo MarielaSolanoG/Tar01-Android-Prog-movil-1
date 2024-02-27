@@ -5,12 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!-- Campo de búsqueda por ID del producto -->
-    <TextView
-        android:id="@+id/textViewProductId"
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar por ID del producto"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButtonPrecioCosto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar por nombre" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPrecioVenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buscar por id" />
+    </RadioGroup>
 
     <EditText
         android:id="@+id/editTextProductId"
@@ -20,20 +33,6 @@
         android:inputType="number"
         android:maxLines="1"
         android:singleLine="true" />
-    <Button
-        android:id="@+id/buttonSearchId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:layout_marginTop="16dp" />
-    <!-- Campo de búsqueda por nombre del producto -->
-    <TextView
-        android:id="@+id/textViewProductName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buscar por nombre del producto"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/editTextProductName"
@@ -46,10 +45,11 @@
 
     <!-- Botón para buscar el producto -->
     <Button
-        android:id="@+id/buttonSearchName"
+        android:id="@+id/buttonSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Buscar"
+        android:onClick="onSearch"
         android:layout_marginTop="16dp" />
 
     <!-- Separador visual -->
@@ -61,24 +61,38 @@
 
 
         <!-- Campo para mostrar y modificar el precio de costo -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="92dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
-
     <TextView
-        android:id="@+id/textViewCostPrice"
+        android:id="@+id/textViewProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nuevo precio de costo"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:text="¿Que desea modificar?"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_marginTop="16dp" />
 
-    <!-- Campo para mostrar y modificar el precio de venta -->
+    <RadioGroup
+        android:id="@+id/radioGroupCambiar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/radioButtonChangePrecioCosto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio costo" />
+
+        <RadioButton
+            android:id="@+id/radioButtonChangePrecioVenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio venta" />
+        <RadioButton
+            android:id="@+id/radioButtonChangeCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad" />
+    </RadioGroup>
+
     <EditText
         android:id="@+id/editTextCostPrice"
         android:layout_width="match_parent"
@@ -87,14 +101,6 @@
         android:inputType="numberDecimal"
         android:maxLines="1"
         android:singleLine="true" />
-
-    <TextView
-        android:id="@+id/textViewSalePrice"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nuevo precio de venta"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/editTextSalePrice"
@@ -105,14 +111,6 @@
         android:maxLines="1"
         android:singleLine="true" />
 
-    <!-- Campo para mostrar y modificar la cantidad -->
-    <TextView
-        android:id="@+id/textViewQuantity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Nueva cantidad"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/editTextQuantity"
