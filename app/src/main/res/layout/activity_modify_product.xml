@@ -78,6 +78,7 @@
         android:text="Nuevo precio de costo"
         android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
+    <!-- Campo para mostrar y modificar el precio de venta -->
     <EditText
         android:id="@+id/editTextCostPrice"
         android:layout_width="match_parent"
@@ -87,7 +88,6 @@
         android:maxLines="1"
         android:singleLine="true" />
 
-    <!-- Campo para mostrar y modificar el precio de venta -->
     <TextView
         android:id="@+id/textViewSalePrice"
         android:layout_width="match_parent"
@@ -129,6 +129,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar cambios"
+        android:onClick="onSaveChanges"
         android:layout_marginTop="16dp" />
     <Button
         android:id="@+id/buttonExit"
