@@ -40,12 +40,26 @@ public class RegisterProductActivity extends Activity {
         }
         // Convertir el ID del producto a un número entero
         int productId = Integer.parseInt(productIdText);
+        // Verificar si el ID del producto ya existe en la lista de productos
+        ProductManager productManager = MyApplication.getProductManager();
+        List<Product> productList = productManager.getProductList();
+        for (Product product : productList) {
+            if (product.getProductId() == productId) {
+                // Mostrar un mensaje de error si el ID del producto ya existe
+                Toast.makeText(this, "El ID del producto ya existe, por favor ingrese otro", Toast.LENGTH_SHORT).show();
+                idEditText.setText("");
+                nameEditText.setText("");
+                priceCostEditText.setText("");
+                priceSaleEditText.setText("");
+                quantityEditText.setText("");
+                quantitySoldEditText.setText("");
+                return;
+            }
+        }
         // Crear un nuevo producto
         Product newProduct = new Product(productId, name, quantity, priceCost, priceSale, quantitySold);
         System.out.println(newProduct);
-        ProductManager productManager = MyApplication.getProductManager();
         productManager.addProduct(newProduct);
-        List<Product> productList = productManager.getProductList();
         for (Product product : productList) {
             System.out.println("Product ID: " + product.getProductId());
             System.out.println("Name: " + product.getName());
