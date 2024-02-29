@@ -91,6 +91,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cantidad" />
+        <RadioButton
+            android:id="@+id/radioButtonChangeCantidadVendida"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad vendida" />
     </RadioGroup>
 
     <EditText
@@ -117,6 +122,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Ingrese nueva cantidad"
+        android:inputType="number"
+        android:maxLines="1"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/editTextQuantitySold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese nueva cantidad vendida"
         android:inputType="number"
         android:maxLines="1"
         android:singleLine="true" />

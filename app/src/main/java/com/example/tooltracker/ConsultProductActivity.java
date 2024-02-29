@@ -53,6 +53,7 @@ public class ConsultProductActivity extends Activity {
     }
 
     public void searchProductButtonClick(View view) {
+        clearListView();
         String selectedOption = ((RadioButton) findViewById(radioGroup.getCheckedRadioButtonId())).getText().toString();
         String quantityText = editTextSearch.getText().toString();
 

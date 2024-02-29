@@ -19,12 +19,12 @@
         android:maxLines="1"
         android:singleLine="true" />
     <Button
-        android:id="@+id/buttonSearchId"
+        android:id="@+id/buttonDeleteById"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Buscar"
+        android:text="Eliminar producto"
+        android:onClick="deleteProductById"
         android:layout_marginTop="16dp" />
-    <!-- Campo de búsqueda por nombre del producto -->
     <TextView
         android:id="@+id/textViewProductName"
         android:layout_width="match_parent"
@@ -42,13 +42,7 @@
         android:maxLines="1"
         android:singleLine="true" />
 
-    <!-- Botón para buscar el producto -->
-    <Button
-        android:id="@+id/buttonSearchName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:layout_marginTop="16dp" />
+
 
     <!-- Separador visual -->
     <View
@@ -57,21 +51,12 @@
         android:background="@android:color/darker_gray"
         android:layout_marginTop="16dp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="92dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
     <Button
-        android:id="@+id/buttonSaveChanges"
+        android:id="@+id/buttonDeleteByName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Eliminar producto"
-        android:onClick="deleteProduct"
+        android:onClick="deleteProductByName"
         android:layout_marginTop="16dp" />
     <Button
         android:id="@+id/buttonExit"
