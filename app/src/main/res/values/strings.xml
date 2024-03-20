@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">ToolTracker</string>
+    <string name="home">Inicio</string>
+    <string name="consult">Consultar</string>
+    <string name="delete">Eliminar</string>
+    <string name="modify">Modificar</string>
+    <string name="register">Añadir</string>
+    <string name="navigation_drawer_open">navigation_drawer_open</string>
+    <string name="navigation_drawer_close">navigation_drawer_close</string>
 </resources>
