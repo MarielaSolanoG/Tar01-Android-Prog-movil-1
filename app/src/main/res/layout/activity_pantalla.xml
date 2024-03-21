@@ -9,69 +9,6 @@
     android:fitsSystemWindows="true"
     tools:context=".PantallaPrincipal">
 
-    <!-- Contenido principal -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <!-- Texto "Ferretería El Cielo" -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#6A5ACD"
-            android:padding="20dp"
-            android:text="Ferretería El Cielo"
-            android:textColor="#FFFFFF"
-            android:textSize="30sp"
-            android:textAlignment="center"/>
-
-        <!-- Imagen "Logo" -->
-        <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/imagen_ferreteria"
-            android:contentDescription="Logo"
-            android:layout_gravity="center"/>
-
-        <!-- Texto "Inventario" -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Inventario"
-            android:textSize="30sp"
-            android:textColor="#6A5ACD"
-            android:textAlignment="center"/>
-
-        <!-- Botones -->
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Agregar productos"
-            android:textSize="20sp"
-            android:onClick="onAgregarProductosButtonClick"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Consultar productos"
-            android:textSize="20sp"
-            android:onClick="onConsultarProductosButtonClick"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Modificar productos"
-            android:textSize="20sp"
-            android:onClick="onModificarProductosButtonClick"/>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Eliminar productos"
-            android:textSize="20sp"
-            android:onClick="onEliminarProductosButtonClick"/>
-    </LinearLayout>
 
     <!-- NavigationView -->
     <com.google.android.material.navigation.NavigationView
@@ -82,13 +19,51 @@
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu" />
 
-    <!-- Toolbar -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <!-- Contenido desplazable -->
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:titleTextColor="@android:color/white" />
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+
+            <!-- Toolbar -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:titleTextColor="@android:color/white" />
+
+            <!-- TextView -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toolbar"
+                android:background="#6A5ACD"
+                android:text="Ferretería El Cielo"
+                android:textSize="30sp"
+                android:textColor="@android:color/white"
+                android:padding="20dp"
+                android:textAlignment="center"/>
+
+            <!-- ImageView -->
+            <ImageView
+                android:id="@+id/imagenFerreteria"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/tvTitulo"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/imagen_ferreteria"
+                android:contentDescription="Logo"/>
+
+        </RelativeLayout>
+    </ScrollView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
